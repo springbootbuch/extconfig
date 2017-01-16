@@ -3,6 +3,9 @@ package de.springbootbuch.extconfig;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -43,9 +46,12 @@ public class ExampleConfiguration {
     }
 
     /** The greeting used. */
+    @NotNull
+    @Size(min = 1)
     private String greeting;
 
     /** Some arbitrary interval. */
+    @Min(10)
     private Integer interval;
 
     /** An example of maps. */
