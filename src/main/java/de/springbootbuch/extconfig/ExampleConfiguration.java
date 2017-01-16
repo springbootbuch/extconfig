@@ -12,7 +12,7 @@ public class ExampleConfiguration {
     public static class Server {
         /** The name of the server. */
         private String name;
-        
+
         /** The URL of the server. */
         private URL url;
 
@@ -30,30 +30,30 @@ public class ExampleConfiguration {
 
         public void setUrl(URL url) {
             this.url = url;
-        }              
+        }
 
         @Override
         public String toString() {
             return "Server{" + "name=" + name + ", url=" + url + '}';
         }
     }
-    
+
     public static enum Environment {
         dev, prod, cloud
     }
-    
+
     /** The greeting used. */
     private String greeting;
-    
+
     /** Some arbitrary interval. */
     private Integer interval;
-    
+
     /** An example of maps. */
     private Map<Environment, Map<String, Object>> environments;
-    
+
     /** The list of servers. */
     private List<Server> servers;
-    
+
     /** A precision. */
     private Double precision;
 
@@ -99,17 +99,17 @@ public class ExampleConfiguration {
 
     @Override
     public String toString() {
-        final StringBuilder rv = new StringBuilder();        
+        final StringBuilder rv = new StringBuilder();
         rv
                 .append("ExampleConfiguration{")
                 .append("\n\tgreeting=").append(greeting)
                 .append(",\n\tinterval=").append(interval)
                 .append(",\n\tprecision=").append(precision)
-                .append(",\n\tservers=").append(servers)                
+                .append(",\n\tservers=").append(servers)
                 .append(",\n\tenvironments=").append(environments)
                 .append("\n}");
         return rv.toString();
     }
-    
-    
+
+
 }
