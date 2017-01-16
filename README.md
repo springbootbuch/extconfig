@@ -25,3 +25,7 @@ Multiprofile and priority
 ```java -jar target/extconfig.jar --spring.profiles.active=demo2,demo1```
 
 ```java -jar target/extconfig.jar --spring.profiles.active=demo1,demo2```
+
+Validation of configuration and failure analysis
+
+```java -jar target/extconfig.jar --spring.profiles.active=invalid```
