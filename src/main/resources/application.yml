@@ -7,8 +7,6 @@ example:
     servers:
         - name: springbootbuch
           url: http://springbootbuch.de
-        - name: bootifultodos
-          url: http://bootifultodos.de
 
 ---
 spring:
