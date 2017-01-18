@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class NegatedProfilesTest {
 
     @Autowired
-    private ExampleConfiguration exampleConfiguration;
+    private ExampleProperties exampleConfiguration;
     
     @Value("${someValue}")
     private Integer someValue;

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties("example")
-public class ExampleConfiguration {
+public class ExampleProperties {
     public static class Server {
         /** The name of the server. */
         private String name;
@@ -107,7 +107,7 @@ public class ExampleConfiguration {
     public String toString() {
         final StringBuilder rv = new StringBuilder();
         rv
-                .append("ExampleConfiguration{")
+                .append("ExampleProperties{")
                 .append("\n\tgreeting=").append(greeting)
                 .append(",\n\tinterval=").append(interval)
                 .append(",\n\tprecision=").append(precision)

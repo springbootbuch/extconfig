@@ -9,15 +9,15 @@ public class ExampleService {
 
     private final String someValue;
 
-    private final ExampleConfiguration exampleConfiguration;
+    private final ExampleProperties exampleProperties;
 
-    public ExampleService(@Value("${someValue:-1}") String someValue, ExampleConfiguration exampleConfiguration) {
+    public ExampleService(@Value("${someValue:-1}") String someValue, ExampleProperties exampleProperties) {
         this.someValue = someValue;
-        this.exampleConfiguration = exampleConfiguration;
+        this.exampleProperties = exampleProperties;
     }
 
     public void printConfiguration(final PrintStream printWriter) {
         printWriter.println("someValue=" + this.someValue);
-        printWriter.println("exampleConfiguration=" + this.exampleConfiguration);
+        printWriter.println("exampleProperties=" + this.exampleProperties);
     }
 }
