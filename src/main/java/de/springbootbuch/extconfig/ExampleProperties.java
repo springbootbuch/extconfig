@@ -116,6 +116,4 @@ public class ExampleProperties {
                 .append("\n}");
         return rv.toString();
     }
-
-
 }
