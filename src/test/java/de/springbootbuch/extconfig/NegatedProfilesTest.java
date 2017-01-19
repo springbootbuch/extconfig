@@ -25,7 +25,7 @@ public class NegatedProfilesTest {
 
     @Test
     public void negatedProfilesShouldWork() {
-        Assert.assertThat(exampleConfiguration.getGreeting(), is(equalTo("Hello, Demo2!")));
+        Assert.assertThat(exampleConfiguration.getTheGreeting(), is(equalTo("Hello, Demo2!")));
         Assert.assertThat(someValue, is(equalTo(4711)));
     }
 }
