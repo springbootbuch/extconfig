@@ -107,7 +107,7 @@ public class ExampleProperties {
     public String toString() {
         final StringBuilder rv = new StringBuilder();
         rv
-                .append("ExampleProperties{")          
+                .append("ExampleProperties{")
                 .append("\n\ttheGreeting=").append(theGreeting)
                 .append(",\n\tinterval=").append(interval)
                 .append(",\n\tprecision=").append(precision)
