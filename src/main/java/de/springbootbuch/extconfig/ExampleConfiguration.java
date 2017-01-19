@@ -48,7 +48,7 @@ public class ExampleConfiguration {
     /** The greeting used. */
     @NotNull
     @Size(min = 1)
-    private String greeting;
+    private String theGreeting;
 
     /** Some arbitrary interval. */
     @Min(10)
@@ -63,12 +63,12 @@ public class ExampleConfiguration {
     /** A precision. */
     private Double precision;
 
-    public String getGreeting() {
-        return greeting;
+    public String getTheGreeting() {
+        return theGreeting;
     }
 
-    public void setGreeting(String greeting) {
-        this.greeting = greeting;
+    public void setTheGreeting(String theGreeting) {
+        this.theGreeting = theGreeting;
     }
 
     public Integer getInterval() {
@@ -108,7 +108,7 @@ public class ExampleConfiguration {
         final StringBuilder rv = new StringBuilder();
         rv
                 .append("ExampleConfiguration{")
-                .append("\n\tgreeting=").append(greeting)
+                .append("\n\ttheGreeting=").append(theGreeting)
                 .append(",\n\tinterval=").append(interval)
                 .append(",\n\tprecision=").append(precision)
                 .append(",\n\tservers=").append(servers)

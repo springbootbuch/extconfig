@@ -1,7 +1,7 @@
 someValue: 4711
 
 example:
-    greeting: Hello, World!
+    the-greeting: Hello, World!
     interval: 1000
     precision: 42.23
     servers:
@@ -13,7 +13,7 @@ spring:
     profiles: demo1
 
 example:
-    greeting: Hello, Demo1!
+    the-greeting: Hello, Demo1!
     servers:
         - name: demo
           url: http://test.com
@@ -23,7 +23,7 @@ spring:
     profiles: demo2
 
 example:
-    greeting: Hello, Demo2!
+    the-greeting: Hello, Demo2!
     interval: 2000
     servers:
         - name: bootifultodos
