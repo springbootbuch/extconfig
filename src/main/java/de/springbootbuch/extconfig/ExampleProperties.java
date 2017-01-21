@@ -8,9 +8,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 @Component
 @ConfigurationProperties("example")
+@Validated
 public class ExampleProperties {
     public static class Server {
         /** The name of the server. */
