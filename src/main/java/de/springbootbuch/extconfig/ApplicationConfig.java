@@ -4,6 +4,7 @@ import de.springbootbuch.extconfig.ApplicationConfig.BarProperties;
 import de.springbootbuch.extconfig.ApplicationConfig.FooProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -36,5 +37,40 @@ public class ApplicationConfig {
         public void setValue(String value) {
             this.value = value;
         }
+    }
+    
+    public static class FooService {
+        final String name;
+
+        public FooService(String name) {
+            this.name = name;
+        }
+    }
+    
+    public static class BarService {
+        final FooService fooService;
+        
+        final Integer interval;
+
+        public BarService(FooService fooService, Integer interval) {
+            this.fooService = fooService;
+            this.interval = interval;
+        }
+    }
+    
+    private final FooProperties fooProperties;
+
+    public ApplicationConfig(FooProperties fooProperties) {
+        this.fooProperties = fooProperties;
+    }
+    
+    @Bean
+    public FooService fooService() {
+        return new FooService(fooProperties.getValue());
+    }
+    
+    @Bean
+    public BarService barService(ExampleProperties exampleProperties) {
+        return new BarService(fooService(), exampleProperties.getInterval());
     }
 }
