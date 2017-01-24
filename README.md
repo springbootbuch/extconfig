@@ -29,3 +29,10 @@ Multiprofile and priority
 Validation of configuration and failure analysis
 
 ```java -jar target/extconfig.jar --spring.profiles.active=invalid```
+
+Overwrite property with env variable (notice the double underscores, `.` not supported in zsh)
+
+```
+$ export EXAMPLE_THE_GREETING=test
+java -jar target/extconfig.jar
+```
