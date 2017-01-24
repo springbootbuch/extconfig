@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
     @ConfigurationProperties("bar")
-    public class BarProperties {
+    public static class BarProperties {
 
         private String otherValue;
 
