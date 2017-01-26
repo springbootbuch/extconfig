@@ -4,31 +4,25 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.support.GenericApplicationContext;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
     /**
      * The main entry for the JVM.
-     * @param args 
+     * @param args
      */
-    public static void main(String... args) {        
-        final SpringApplication springApplication = new SpringApplication(Application.class);
-        springApplication.addInitializers((GenericApplicationContext ctx) -> {
-            ctx.registerBean(Greeter.class, Greeter::new);
-        });
-        
-        springApplication.run(args);
+    public static void main(String... args) {
+        SpringApplication.run(Application.class, args);
     }
-    
+
     private final String greeting;
-    
+
     /** The dependency on an example service, injected via the constructor. */
     private final ExampleService exampleService;
 
     private final Greeter greeter;
-    
+
     public Application(
             @Value("${example.the-greeting:No greeting available}") final String greeting,
             final ExampleService exampleService,
@@ -42,9 +36,9 @@ public class Application implements CommandLineRunner {
     /**
      * The entry point for running Spring Boot applications as command line applications.
      * Note that this isn't a static method like the {@link #main(java.lang.String...) }.
-     * 
-     * @param args 
-     * @throws Exception 
+     *
+     * @param args
+     * @throws Exception
      */
     @Override
     public void run(String... args) throws Exception {
