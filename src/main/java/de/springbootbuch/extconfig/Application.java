@@ -30,7 +30,7 @@ public class Application implements CommandLineRunner {
     private final Greeter greeter;
     
     public Application(
-            @Value("${example.greeting:No greeting available}") final String greeting,
+            @Value("${example.the-greeting:No greeting available}") final String greeting,
             final ExampleService exampleService,
             final Greeter greeter
     ) {
