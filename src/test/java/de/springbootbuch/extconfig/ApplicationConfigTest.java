@@ -25,10 +25,10 @@ public class ApplicationConfigTest {
     @Test
     public void checkUniqueServices() {
         Assert.assertThat(applicationContext.getBeansOfType(FooService.class).size(), is(equalTo(1)));
+        Assert.assertThat(applicationContext.containsBean("myFooService"), is(true));
         Assert.assertThat(applicationContext.getBeansOfType(BarService.class).size(), is(equalTo(1)));
-        
+              
         final BarService barService = applicationContext.getBean(BarService.class);
-        Assert.assertThat(barService.fooService, is(equalTo(applicationContext.getBean(FooService.class))));
-        System.out.println(this.applicationContext.getClass());
+        Assert.assertThat(barService.fooService, is(equalTo(applicationContext.getBean(FooService.class))));       
     }
 }

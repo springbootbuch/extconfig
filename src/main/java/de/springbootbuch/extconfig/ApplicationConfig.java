@@ -64,7 +64,7 @@ public class ApplicationConfig {
         this.fooProperties = fooProperties;
     }
     
-    @Bean
+    @Bean(name = "myFooService")
     public FooService fooService() {
         return new FooService(fooProperties.getValue());
     }
