@@ -12,8 +12,9 @@ public class Application implements CommandLineRunner {
      * The main entry for the JVM.
      * @param args 
      */
-    public static void main(String... args) {
-        SpringApplication.run(Application.class, args);
+    public static void main(String... args) {        
+        final SpringApplication springApplication = new SpringApplication(Application.class);
+        springApplication.run(args);
     }
     
     private final String greeting;
