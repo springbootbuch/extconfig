@@ -45,6 +45,10 @@ public class ApplicationConfig {
         public FooService(String name) {
             this.name = name;
         }
+        
+        public void myInit() {}
+        
+        public void destroy() {}
     }
     
     public static class BarService {
@@ -56,6 +60,10 @@ public class ApplicationConfig {
             this.fooService = fooService;
             this.interval = interval;
         }
+        
+        public void close() {
+            System.out.println("close");
+        }
     }
     
     private final FooProperties fooProperties;
@@ -64,12 +72,12 @@ public class ApplicationConfig {
         this.fooProperties = fooProperties;
     }
     
-    @Bean(name = "myFooService")
+    @Bean(name = "myFooService", initMethod = "myInit", destroyMethod = "destroy")
     public FooService fooService() {
         return new FooService(fooProperties.getValue());
     }
     
-    @Bean
+    @Bean(destroyMethod = "")
     public BarService barService(ExampleProperties exampleProperties) {
         return new BarService(fooService(), exampleProperties.getInterval());
     }
