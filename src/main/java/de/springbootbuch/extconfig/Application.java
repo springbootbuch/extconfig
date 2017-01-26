@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.support.GenericApplicationContext;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -14,6 +15,10 @@ public class Application implements CommandLineRunner {
      */
     public static void main(String... args) {        
         final SpringApplication springApplication = new SpringApplication(Application.class);
+        springApplication.addInitializers((GenericApplicationContext ctx) -> {
+            ctx.registerBean(Greeter.class, Greeter::new);
+        });
+        
         springApplication.run(args);
     }
     
@@ -22,12 +27,16 @@ public class Application implements CommandLineRunner {
     /** The dependency on an example service, injected via the constructor. */
     private final ExampleService exampleService;
 
+    private final Greeter greeter;
+    
     public Application(
             @Value("${example.greeting:No greeting available}") final String greeting,
-            final ExampleService exampleService
+            final ExampleService exampleService,
+            final Greeter greeter
     ) {
         this.greeting = greeting;
         this.exampleService = exampleService;
+        this.greeter = greeter;
     }
 
     /**
@@ -39,7 +48,7 @@ public class Application implements CommandLineRunner {
      */
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(this.greeting);
+        this.greeter.sayHello(this.greeting);
         this.exampleService.printConfiguration(System.out);
     }
 }
