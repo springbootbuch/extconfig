@@ -1,18 +1,18 @@
 someValue: 4711
 
 example:
-    the-greeting: Hello, World!
+    the-greeting: "Hello, World!"
     interval: 1000
     precision: 42.23
     servers:
-        - name: springbootbuch
-          url: http://springbootbuch.de
-        - name: bootifultodos
-          url: http://bootifultodos.de
+        - name: "springbootbuch"
+          url: "http://springbootbuch.de"
+        - name: "bootifultodos"
+          url: "http://bootifultodos.de"
     environments:
         dev:
-            foo: bar
-            test: val
+            foo: "bar"
+            test: "val"
         prod:
-            foo: prodbar
-            test: prodval
+            foo: "prodbar"
+            test: "prodval"

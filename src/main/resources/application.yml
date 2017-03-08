@@ -1,33 +1,33 @@
 someValue: 4711
 
 example:
-    the-greeting: Hello, World!
+    the-greeting: "Hello, World!"
     interval: 1000
     precision: 42.23
     servers:
-        - name: springbootbuch
-          url: http://springbootbuch.de
+        - name: "springbootbuch"
+          url: "http://springbootbuch.de"
 
 ---
 spring:
-    profiles: demo1
+    profiles: "demo1"
 
 example:
-    the-greeting: Hello, Demo1!
+    the-greeting: "Hello, Demo1!"
     servers:
-        - name: demo
-          url: http://test.com
+        - name: "demo"
+          url: "http://test.com"
 
 ---
 spring:
-    profiles: demo2
+    profiles: "demo2"
 
 example:
-    the-greeting: Hello, Demo2!
+    the-greeting: "Hello, Demo2!"
     interval: 2000
     servers:
-        - name: bootifultodos
-          url: http://bootifultodos.de
+        - name: "bootifultodos"
+          url: "http://bootifultodos.de"
 
 ---
 spring:
