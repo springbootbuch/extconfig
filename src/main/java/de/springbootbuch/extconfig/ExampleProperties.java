@@ -14,108 +14,117 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties("example")
 @Validated
 public class ExampleProperties {
-    public static class Server {
-        /** The name of the server. */
-        private String name;
 
-        /** The URL of the server. */
-        private URL url;
+	public static class Server {
 
-        public String getName() {
-            return name;
-        }
+		/** The name of the server. */
+		private String name;
 
-        public void setName(String name) {
-            this.name = name;
-        }
+		/** The URL of the server. */
+		private URL url;
+		
+		// Getter und Setter weggelassen
 
-        public URL getUrl() {
-            return url;
-        }
+		public String getName() {
+			return name;
+		}
 
-        public void setUrl(URL url) {
-            this.url = url;
-        }
+		public void setName(String name) {
+			this.name = name;
+		}
 
-        @Override
-        public String toString() {
-            return "Server{" + "name=" + name + ", url=" + url + '}';
-        }
-    }
+		public URL getUrl() {
+			return url;
+		}
 
-    public static enum Environment {
-        dev, prod, cloud
-    }
+		public void setUrl(URL url) {
+			this.url = url;
+		}
 
-    /** The greeting used. */
-    @NotNull
-    @Size(min = 1)
-    private String theGreeting;
+		@Override
+		public String toString() {
+			return "Server{" + "name=" + name + ", url=" + url + '}';
+		}
+	}
 
-    /** Some arbitrary interval. */
-    @Min(10)
-    private Integer interval;
+	public static enum Environment {
+		dev, prod, cloud
+	}
 
-    /** An example of maps. */
-    private Map<Environment, Map<String, Object>> environments;
+	/** The greeting used. */
+	@NotNull
+	@Size(min = 1)
+	private String theGreeting;
 
-    /** The list of servers. */
-    private List<Server> servers;
+	/** Some arbitrary interval. */
+	@Min(10)
+	private Integer interval;
 
-    /** A precision. */
-    private Double precision;
+	/** An example of maps. */
+	private Map<Environment, Map<String, Object>> 
+		environments;
 
-    public String getTheGreeting() {
-        return theGreeting;
-    }
+	/** The list of servers. */
+	private List<Server> servers;
 
-    public void setTheGreeting(String theGreeting) {
-        this.theGreeting = theGreeting;
-    }
+	/** A precision. */
+	private Double precision;
 
-    public Integer getInterval() {
-        return interval;
-    }
+	// Getter und Setter weggelassen
+	// Sie müssen aber für die Konfiguration
+	// vorhanden sein!
+	
+	public String getTheGreeting() {
+		return theGreeting;
+	}
 
-    public void setInterval(Integer interval) {
-        this.interval = interval;
-    }
+	public void setTheGreeting(String theGreeting) {
+		this.theGreeting = theGreeting;
+	}
 
-    public Map<Environment, Map<String, Object>> getEnvironments() {
-        return environments;
-    }
+	public Integer getInterval() {
+		return interval;
+	}
 
-    public void setEnvironments(Map<Environment, Map<String, Object>> environments) {
-        this.environments = environments;
-    }
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+	}
 
-    public List<Server> getServers() {
-        return servers;
-    }
+	public Map<Environment, Map<String, Object>> getEnvironments() {
+		return environments;
+	}
 
-    public void setServers(List<Server> servers) {
-        this.servers = servers;
-    }
+	public void setEnvironments(Map<Environment, Map<String, Object>> environments) {
+		this.environments = environments;
+	}
 
-    public Double getPrecision() {
-        return precision;
-    }
+	public List<Server> getServers() {
+		return servers;
+	}
 
-    public void setPrecision(Double precision) {
-        this.precision = precision;
-    }
+	public void setServers(List<Server> servers) {
+		this.servers = servers;
+	}
 
-    @Override
-    public String toString() {
-        final StringBuilder rv = new StringBuilder();
-        rv
-                .append("ExampleProperties{")
-                .append("\n\ttheGreeting=").append(theGreeting)
-                .append(",\n\tinterval=").append(interval)
-                .append(",\n\tprecision=").append(precision)
-                .append(",\n\tservers=").append(servers)
-                .append(",\n\tenvironments=").append(environments)
-                .append("\n}");
-        return rv.toString();
-    }
+	public Double getPrecision() {
+		return precision;
+	}
+
+	public void setPrecision(Double precision) {
+		this.precision = precision;
+	}
+
+	@Override
+	public String toString() {
+		final StringBuilder rv = new StringBuilder();
+		rv
+			.append("ExampleProperties{")
+			.append("\n\ttheGreeting=").append(theGreeting)
+			.append(",\n\tinterval=").append(interval)
+			.append(",\n\tprecision=").append(precision)
+			.append(",\n\tservers=").append(servers)
+			.append(",\n\tenvironments=").append(environments)
+			.append("\n}");
+		return rv.toString();
+	}
 }
