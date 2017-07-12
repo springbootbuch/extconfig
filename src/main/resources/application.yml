@@ -28,9 +28,3 @@ example:
     servers:
         - name: "bootifultodos"
           url: "http://bootifultodos.de"
-
----
-spring:
-    profiles: "!demo2"
-
-someValue: 2109
