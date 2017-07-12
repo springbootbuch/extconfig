@@ -1,5 +1,7 @@
 # Demo that demonstrated various ways of external configuration
 
+[![Build Status](https://travis-ci.org/springbootbuch/extconfig.svg?branch=master)](https://travis-ci.org/springbootbuch/extconfig)
+
 ## Examples
 
 Merging of Java-Properties and YAML
