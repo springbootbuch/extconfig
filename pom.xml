@@ -16,10 +16,6 @@
         <version>2.0.0.M2</version>
     </parent>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
